@@ -1,0 +1,29 @@
+This folder is the ROS package for running the sensor subscribers and sensor publisher/subscriber.
+More details are written within each python script.
+To run any scripts within this package, go to terminal and type
+	
+	roscore
+
+Open another terminal (Ctrl-Shift-T) and enter the following command:
+
+	rosrun sensor_subscriber <name_of_script>.py
+
+Example usage:
+
+	rosrun sensor_subscriber sensor_subscriber_v2.py
+
+To recreate this package in your ROS-enabled device, enter the following commands in your terminal:
+
+	cd ~/<name_of_your_workspace>/src
+	catkin_make_pkg sensor_subscriber rospy
+	cd sensor_subscriber
+	touch sensor_subscriber.py sensor_subscriber_v2.py sub_pub.py
+
+Go to the sensor_subscriber folder and edit the scripts one by one.
+Simply copy and paste the contents. Afterwards, go back to the terminal and enter
+
+	chmod +x sensor_subscriber.py sensor_subscriber_v2.py sub_pub.py
+	cd ~/<name_of_your_workspace>
+	catkin_make
+
+Wait for the catkin_make to finish and return successful.

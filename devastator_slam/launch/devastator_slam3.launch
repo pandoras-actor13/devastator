@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find devastator)/devastator_description/urdf/devastator_laser.urdf.xacro'"/>
+
+  <!-- send fake joint values -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="False"/>
+  </node>
+
+  <!-- Combine joint values -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+
+  <include file="$(find devastator)/devastator_slam/launch/devastator_gmapping2.launch"/>
+
+  <!-- Show in Rviz   -->
+ <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find devastator)/devastator_slam/rviz/devastator_gmapping.rviz"/>
+  
+</launch>

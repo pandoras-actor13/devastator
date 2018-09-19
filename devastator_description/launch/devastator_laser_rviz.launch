@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="model" default="$(find urdf_tutorial)/urdf/01-myfirst.urdf"/>
+  <arg name="gui" default="true" />
+  <arg name="rvizconfig" default="$(find urdf_tutorial)/rviz/urdf.rviz" />
+
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find devastator)/devastator_description/urdf/devastator_laser.urdf.xacro'"/>
+  <param name="use_gui" value="$(arg gui)"/>
+
+  <!-- send fake joint values -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+
+  <!-- Combine joint values -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+
+  <!-- Show in Rviz   -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+  <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find devastator)/devastator_slam/rviz/devastator_gmapping.rviz"/>
+</launch>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!--- Run gmapping -->
+  <include file="$(find devastator)/devastator_slam/launch/devastator_gmapping2.launch"/>
+
+  <!--- Run Move Base -->
+  <include file="$(find devastator)/devastator_navigation/launch/devastator_move_base.launch" />
+
+  <!-- Run Frontier Exploration -->
+  <include file="$(find devastator)/devastator_navigation/launch/devastator_exploration.launch" />
+
+</launch>

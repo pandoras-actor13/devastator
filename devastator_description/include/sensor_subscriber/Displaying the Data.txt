@@ -1,0 +1,52 @@
+The contents of this package will run successfully but will not receive any data unless
+connected to the Arduino via rosserial. Make sure you have succesfully installed rosserial in your device
+before attempting to run the package.
+
+Connect the Arduino to the raspberry pi(or any ROS-enabled device with rosserial installed)
+via USB cable. Open the Arduino IDE and check the port where the Arduino
+is connected. Enter the following commands in the terminal.
+
+1.	roscore
+
+Open another terminal and enter
+
+2.	rosrun rosserial_python serial_node.py <port_of_Arduino>
+
+If errors occus such as "Unable to sync with device", add the baud rate specified in the Arduino code.
+
+	rosrun rosserial_python serial_node.py <port_of_Arduino> _baud:=<baud_rate_in_the_code>
+
+Once this runs successfully, open another terminal and enter
+
+3.	rosrun sensor_subscriber <name_of_script_you_want_to_run>.py
+
+The data should be displayed in the last terminal.
+
+
+Should you want to display the data in a remote device, make sure that ROS and rosserial are installed properly.
+First, recreate the sensor_subscriber package. This is documented in a separate file.
+Next, make sure that you are connected to the same network as the Raspberry Pi.
+Get the IP address of the pi and your IP as well. Select which device should be the master and which one should be the client.
+Go to your terminal.
+
+	export ROS_IP=<your_IP>
+	export ROS_HOSTNAME=<your_IP>
+	export ROS_MASTER_URI=http://<IP_of_master_device>:11311
+
+Open another terminal, SSH into the pi.
+
+	ssh pi@<IP-of_the_pi
+
+Enter the same code as you did in your terminal.
+Go to the terminal of the master device and run
+
+	roscore
+
+To check connectivity, go into the client's terminal and enter
+
+	rostopic list
+
+There should be a list produced. If the error, "Unable to communicate with master!" occurs,
+check the connectivity of the device to the network and make sure you run roscore on the master's terminal.
+To display the data received from the Arduino, go to the master's terminal and run #2 command above.
+No go to the client's terminal and run command #3.
