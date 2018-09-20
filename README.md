@@ -1,6 +1,16 @@
 # The Devastator
 A ROS enabled Devastator Robot Platform
 
+## Prerequisite
+1. PC with Ubuntu 16.04
+2. ROS-Kinetic
+
+### PC Minimum Specs
+1. Dual Core Processor
+2. 8GB RAM
+3. Dedicated Graphics Card with atleast 4GB VRAM
+4. SSD 240 GB for running ROS.
+
 ## Installation
 1. Clone repository into your catkin workspace source directory: `cd ~/$(YOUR_WORKSPACE)/src`
 2. Compile your catkin workspace: `cd .. && catkin_make`
