@@ -2,7 +2,7 @@
 <launch>
   <arg name="model" default="$(find urdf_tutorial)/urdf/01-myfirst.urdf"/>
   <arg name="gui" default="true" />
-  <arg name="rvizconfig" default="$(find urdf_tutorial)/rviz/urdf.rviz" />
+  <arg name="rvizconfig" default="$(find devastator)/devastator_description/rviz/robot_test.rviz" />
 
   <param name="robot_description" command="$(find xacro)/xacro.py '$(find devastator)/devastator_description/urdf/devastator_full.urdf.xacro'"/>
   <param name="use_gui" value="$(arg gui)"/>
