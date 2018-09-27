@@ -7,17 +7,9 @@
   <xacro:include filename="$(find devastator)/devastator_description/urdf/devastator_laser.gazebo.xacro" />
   <!--xacro:include filename="$(find mybot_description)/urdf/materials.xacro" /-->
   <xacro:include filename="$(find mybot_description)/urdf/macros.xacro" />
-  
 
-  
-<!--link name="base_footprint"/>
 
-  <joint name="base_joint" type="fixed">
-    <parent link="base_footprint"/>
-    <origin xyz="0.0 0.0 0.0" rpy="0 0 1.57"/>
-    <child link="base_link"/>
-  </joint-->
-	
+
 <link name="base_link">
 	<visual>
 		<origin rpy="0 0 0" xyz="0 0 0"/>
@@ -25,7 +17,7 @@
 			<mesh filename="package://devastator/devastator_description/meshes/base/base_new.dae"/>
 		</geometry>
     </visual>
-	
+
 	<collision>
 		<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
 		<geometry>
@@ -36,7 +28,7 @@
 	<inertial>
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<mass value="5.40e-01"/>
-		
+
 	<inertia ixx="2.2124416e-03" ixy="-1.2294101e-05" ixz="3.4938785e-05"
                iyy="2.1193702e-03" iyz="-5.0120904e-06"
                izz="2.0064271e-03" />
@@ -45,15 +37,15 @@
 
 <!-- Right Wheels -->
 <link name="wheel_one_right">
-  
+
 	<visual>
 		<origin rpy="0 0 0" xyz="0 0 0"/>
 		<geometry>
 			<mesh filename="package://devastator/devastator_description/meshes/wheels/wheel_basic.dae"/>
 		</geometry>
 	</visual>
-		
-		 
+
+
 	<collision>
 		<origin xyz="0 0 0" rpy="1.57 0 0"/>
 		<geometry>
@@ -62,11 +54,11 @@
 	</collision>
 
 	<inertial>
-		
+
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<mass value="1.2e-02"/>
 
-		
+
 		<inertia ixx="1.1175580e-05" ixy="-4.2369783e-11" ixz="-5.9381719e-09"
 				iyy="1.1192413e-05" iyz="-1.4400107e-11"
                izz="2.0712558e-05" />
@@ -79,7 +71,7 @@
 	<origin xyz="0.10538 -0.095 0.008" rpy="0 0 0"/>
 	<axis xyz="0 1 0"/>
 </joint>
-	
+
 <link name="wheel_two_right">
 	<visual>
 		<origin rpy="0 0 0" xyz="0 0 0"/>
@@ -87,7 +79,7 @@
 			<mesh filename="package://devastator/devastator_description/meshes/wheels/wheel_basic.dae"/>
 		</geometry>
 	</visual>
-		
+
 	<collision>
 		<origin xyz="0 0 0" rpy="1.57 0 0"/>
 		<geometry>
@@ -96,18 +88,18 @@
 	</collision>
 
 	<inertial>
-		
+
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<mass value="1.2e-02"/>
 
-		
+
 		<inertia ixx="3.0153996560e-03" ixy="0.0" ixz="1.7522996572e-11"
 					iyy="4.0932945308e-03" iyz="0.0"
 					izz="3.0153987822e-03"/>
 	</inertial>
-	  
+
 </link>
-	
+
 <joint name="wheel_two_right" type="continuous">
 	<parent link="base_link"/>
 	<child link="wheel_two_right"/>
@@ -116,7 +108,7 @@
     <joint_properties damping="0.0" friction="0.0"/>
 	<axis xyz="0 1 0"/>
 </joint>
-	
+
 <link name="wheel_three_right">
 	<visual>
 		<origin rpy="0 0 0" xyz="0 0 0"/>
@@ -124,7 +116,7 @@
 			<mesh filename="package://devastator/devastator_description/meshes/wheels/wheel_basic.dae"/>
 		</geometry>
 	</visual>
-		
+
 	<collision>
 		<origin xyz="0 0 0" rpy="1.57 0 0"/>
 		<geometry>
@@ -133,17 +125,17 @@
 	</collision>
 
 	<inertial>
-		
+
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<mass value="1.2e-02"/>
 
-		
+
 		<inertia ixx="1.1175580e-05" ixy="-4.2369783e-11" ixz="-5.9381719e-09"
 				iyy="1.1192413e-05" iyz="-1.4400107e-11"
                izz="2.0712558e-05" />
 	</inertial>
 </link>
-	
+
 <joint name="wheel_three_right" type="continuous">
 	<parent link="base_link"/>
 	<child link="wheel_three_right"/>
@@ -152,7 +144,7 @@
     <joint_properties damping="0.0" friction="0.0"/>
 	<axis xyz="0 1 0"/>
 </joint>
-	
+
 <link name="wheel_four_right">
 	<visual>
 		<origin rpy="0 0 0" xyz="0 0 0"/>
@@ -160,7 +152,7 @@
 			<mesh filename="package://devastator/devastator_description/meshes/wheels/wheel_basic.dae"/>
 		</geometry>
 	</visual>
-		
+
 	<collision>
 		<origin xyz="0 0 0" rpy="1.57 0 0"/>
 		<geometry>
@@ -169,17 +161,17 @@
 	</collision>
 
 	<inertial>
-		
+
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<mass value="1.2e-02"/>
 
-		
+
 		<inertia ixx="1.1175580e-05" ixy="-4.2369783e-11" ixz="-5.9381719e-09"
 				iyy="1.1192413e-05" iyz="-1.4400107e-11"
                izz="2.0712558e-05" />
 	</inertial>
 </link>
-	
+
 <joint name="wheel_four_right" type="continuous">
 	<parent link="base_link"/>
 	<child link="wheel_four_right"/>
@@ -188,10 +180,10 @@
     <joint_properties damping="0.0" friction="0.0"/>
 	<axis xyz="0 1 0"/>
 </joint>
-	
-	
 
-	
+
+
+
 <link name="wheel_one_left">
 	<visual>
 		<origin rpy="0 0 3.14159" xyz="0 0 0"/>
@@ -208,16 +200,16 @@
 	</collision>
 
 	<inertial>
-		  
+
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<mass value="1.2e-02"/>
 
-		  
+
 		<inertia ixx="1.1175580e-05" ixy="-4.2369783e-11" ixz="-5.9381719e-09"
 				iyy="1.1192413e-05" iyz="-1.4400107e-11"
                izz="2.0712558e-05" />
 	</inertial>
-	
+
 </link>
 
 <joint name="wheel_one_left" type="continuous">
@@ -228,7 +220,7 @@
     <joint_properties damping="0.0" friction="0.0"/>
 	<axis xyz="0 1 0"/>
 </joint>
-	
+
 <link name="wheel_two_left">
 	<visual>
 		<origin rpy="0 0 3.14159" xyz="0 0 0"/>
@@ -245,17 +237,17 @@
 	</collision>
 
 	<inertial>
-		  
+
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<mass value="1.2e-02"/>
 
-		  
+
 		<inertia ixx="1.1175580e-05" ixy="-4.2369783e-11" ixz="-5.9381719e-09"
 				iyy="1.1192413e-05" iyz="-1.4400107e-11"
                izz="2.0712558e-05" />
 	</inertial>
 </link>
-	
+
 <joint name="wheel_two_left" type="continuous">
 	<parent link="base_link"/>
 	<child link="wheel_two_left"/>
@@ -264,7 +256,7 @@
     <joint_properties damping="0.0" friction="0.0"/>
 	<axis xyz="0 1 0"/>
 </joint>
-	
+
 <link name="wheel_three_left">
 	<visual>
 		<origin rpy="0 0 3.14159" xyz="0 0 0"/>
@@ -281,17 +273,17 @@
 	</collision>
 
 	<inertial>
-		  
+
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<mass value="1.2e-02"/>
 
-		  
+
 		<inertia ixx="1.1175580e-05" ixy="-4.2369783e-11" ixz="-5.9381719e-09"
 				iyy="1.1192413e-05" iyz="-1.4400107e-11"
                izz="2.0712558e-05" />
 	</inertial>
 </link>
-	
+
 <joint name="wheel_three_left" type="continuous">
 	<parent link="base_link"/>
 	<child link="wheel_three_left"/>
@@ -300,7 +292,7 @@
     <joint_properties damping="0.0" friction="0.0"/>
 	<axis xyz="0 1 0"/>
 </joint>
-	
+
 <link name="wheel_four_left">
 	<visual>
 		<origin rpy="0 0 3.14159" xyz="0 0 0"/>
@@ -317,18 +309,18 @@
 	</collision>
 
 	<inertial>
-		  
+
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<mass value="1.2e-02"/>
 
-		  
+
 		<inertia ixx="1.1175580e-05" ixy="-4.2369783e-11" ixz="-5.9381719e-09"
 				iyy="1.1192413e-05" iyz="-1.4400107e-11"
                izz="2.0712558e-05" />
 	</inertial>
-	
+
 </link>
-	
+
 <joint name="wheel_four_left" type="continuous">
 	<parent link="base_link"/>
 	<child link="wheel_four_left"/>
@@ -346,7 +338,7 @@
 			<mesh filename="package://devastator/devastator_description/meshes/wheels/wheel_track.dae"/>
 		</geometry>
 	</visual>
-		
+
 	<collision>
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<geometry>
@@ -355,11 +347,11 @@
 	</collision>
 
 	<inertial>
-		  
+
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<mass value="9.0e-02"/>
 
-		  
+
 		<inertia ixx="1.1175580e-05" ixy="-4.2369783e-11" ixz="-5.9381719e-09"
 				iyy="1.1192413e-05" iyz="-1.4400107e-11"
                izz="2.0712558e-05" />
@@ -374,7 +366,7 @@
     <joint_properties damping="0.0" friction="0.0"/>
 	<axis xyz="0 0 1"/>
 </joint>
-	
+
 <link name="tracked_wheel_left">
 	<visual>
 		<origin rpy="0 0 0" xyz="0 0 0"/>
@@ -382,7 +374,7 @@
 			<mesh filename="package://devastator/devastator_description/meshes/wheels/wheel_track.dae"/>
 		</geometry>
 	</visual>
-		
+
 	<collision>
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<geometry>
@@ -391,17 +383,17 @@
 	</collision>
 
 	<inertial>
-		  
+
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<mass value="9.0e-02"/>
 
-		  
+
 		<inertia ixx="1.1175580e-05" ixy="-4.2369783e-11" ixz="-5.9381719e-09"
 				iyy="1.1192413e-05" iyz="-1.4400107e-11"
                izz="2.0712558e-05" />
 	</inertial>
 </link>
-	
+
 <joint name="tracked_wheel_left" type="continuous">
 	<parent link="base_link"/>
 	<child link="tracked_wheel_left"/>
@@ -432,7 +424,7 @@
       <mass value="${cameraMass}" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <box_inertia m="${cameraMass}" x="${cameraSize}" y="${cameraSize}" z="${cameraSize}" />
-      <inertia ixx="1.0e-6" ixy="0.0" ixz="0.0" 
+      <inertia ixx="1.0e-6" ixy="0.0" ixz="0.0"
 	  iyy="1.0e-6" iyz="0.0" izz="1.0e-6" />
     </inertial>
 </link>
@@ -440,7 +432,7 @@
   <joint name="camera_joint" type="fixed">
     <axis xyz="0 1 0" />
 	<origin xyz="0.12 0 0.05" rpy="0 0 0"/>
-    
+
     <parent link="base_link"/>
     <child link="camera"/>
   </joint>
@@ -459,14 +451,14 @@
       <geometry>
         <mesh filename="package://devastator/devastator_description/meshes/sensors/hokuyo.dae"/>
       </geometry>
-	
+
     </visual>
 
     <inertial>
       <mass value="${cameraMass}" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <box_inertia m="${cameraMass}" x="${cameraSize}" y="${cameraSize}" z="${cameraSize}" />
-      <inertia ixx="1.0e-6" ixy="0.0" ixz="0.0" 
+      <inertia ixx="1.0e-6" ixy="0.0" ixz="0.0"
 	  iyy="1.0e-6" iyz="0.0" izz="1.0e-6" />
     </inertial>
 </link>
@@ -474,42 +466,10 @@
   <joint name="hokuyo_joint" type="fixed">
     <axis xyz="0 1 0" />
 	<origin xyz="0.06 0 0.09" rpy="0 0 0"/>
-    
+
     <parent link="base_link"/>
     <child link="hokuyo"/>
   </joint>
 
-
-<!--link name="belt">
-	<visual>
-		<origin rpy="0 0 0" xyz="0 0 0"/>
-		<geometry>
-			<mesh filename="package://devastator/devastator_description/meshes/wheels/belt2.dae"/>
-		</geometry>
-	</visual>
-		
-	<collision>
-		<origin xyz="0 0 0" rpy="0 0 0"/>
-		<geometry>
-			<cylinder length="0.018" radius="0.033"/>
-		</geometry>
-	</collision>
-
-	<inertial>
-	<mass value= "0.212"/>
-
-  <Inertia matrix>
-		<inertia ixx="1.0" ixy=" 0" ixz="0.0"
-		iyy="1.0 " iyz="0.0"
-		izz="1.0 " />
-	</inertial>
-</link>
-	
-<joint name="belt" type="continuous">
-	<parent link="base_link"/>
-	<child link="belt"/>
-	<origin xyz="0 0 0" rpy="0 0 0"/>
-	<axis xyz="0 0 1"/>
-</joint -->
 
 </robot>

@@ -16,7 +16,7 @@
       <broadcastTF>false</broadcastTF>
     </plugin>
   </gazebo>
-
+<!--
   <gazebo reference="camera">
     <material>Gazebo/Red</material>
     <sensor type="camera" name="camera1">
@@ -54,7 +54,7 @@
     <material>Gazebo/FlatBlack</material>
     <sensor type="ray" name="lds_lfcd_sensor">
       <pose>0 0 0 0 0 0</pose>
-      <!--visualize>$(arg laser_visual)</visualize-->
+      <visualize>$(arg laser_visual)</visualize>
       <visualize>false</visualize>
       <ray>
         <scan>
@@ -82,6 +82,6 @@
         <update_rate>1800</update_rate>
       </plugin>
     </sensor>
-  </gazebo>
+  </gazebo-->
 
 </robot>
